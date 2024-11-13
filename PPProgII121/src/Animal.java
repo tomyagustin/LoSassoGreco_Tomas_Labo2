@@ -1,4 +1,6 @@
- public abstract class Animal {
+import java.util.Objects;
+
+public abstract class Animal {
     protected String nombre;
     protected int edad;
     protected double peso;
@@ -11,8 +13,6 @@
         this.peso = peso;
         this.dieta = dieta;
     }
-    
-    public abstract String toString(); // Este metodo lo van a usar los hijos
     
     @Override
     public boolean equals(Object obj) 
@@ -29,5 +29,10 @@
         
         Animal animal = (Animal) obj;
         return edad == animal.edad && nombre.equals(animal.nombre);
+    }
+    
+    @Override
+    public int hashCode(){
+        return Objects.hash(toString());
     }
 }

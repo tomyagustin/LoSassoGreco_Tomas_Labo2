@@ -1,4 +1,4 @@
-public class Ave extends Animal {
+public class Ave extends Animal implements Vacunacion{
     private double envergaduraAlas;
     
     public Ave(String nombre, int edad, double peso, Dieta dieta, double envergaduraAlas)
@@ -7,6 +7,7 @@ public class Ave extends Animal {
         this.envergaduraAlas = envergaduraAlas;
     }
     
+    @Override
     public void vacunar(){ // Printea un mensaje sobre el nombre del animal vacunado
         System.out.println("Vacunando ave: " + nombre);
     }
